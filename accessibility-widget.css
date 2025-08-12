@@ -1,0 +1,208 @@
+/* Widget Button */
+#accessibility-widget {
+    position: fixed;
+    z-index: 10000;
+    bottom: 20px;
+    right: 20px;
+}
+
+#accessibility-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#accessibility-toggle:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+}
+
+/* Panel */
+#accessibility-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 10001;
+    display: none;
+    border: 1px solid #e0e0e0;
+}
+
+#accessibility-panel.active {
+    display: block;
+}
+
+.accessibility-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #f8f9fa;
+    border-radius: 12px 12px 0 0;
+}
+
+.accessibility-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#close-panel {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+#close-panel:hover {
+    background: #e9ecef;
+    color: #333;
+}
+
+.accessibility-content {
+    padding: 20px;
+}
+
+.accessibility-section {
+    margin-bottom: 24px;
+}
+
+.accessibility-section h4 {
+    margin: 0 0 12px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.control-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.control-group button {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background: white;
+    color: #333;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    min-width: 80px;
+}
+
+.control-group button:hover {
+    background: #f8f9fa;
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.control-group button:active {
+    background: #e9ecef;
+}
+
+/* Accessibility Features */
+.accessibility-high-contrast {
+    filter: contrast(150%);
+}
+
+.accessibility-negative-contrast {
+    filter: invert(100%);
+}
+
+.accessibility-grayscale {
+    filter: grayscale(100%);
+}
+
+.accessibility-light-bg {
+    background: #f8f9fa !important;
+}
+
+.accessibility-highlight-links a {
+    background: yellow !important;
+    color: black !important;
+    text-decoration: underline !important;
+    padding: 2px 4px !important;
+}
+
+.accessibility-big-cursor {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="black" stroke-width="2"/><circle cx="16" cy="16" r="2" fill="black"/></svg>') 16 16, auto !important;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    #accessibility-panel {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .control-group {
+        flex-direction: column;
+    }
+    
+    .control-group button {
+        width: 100%;
+    }
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+    #accessibility-panel {
+        background: #2d3748;
+        color: white;
+    }
+    
+    .accessibility-header {
+        background: #4a5568;
+        border-bottom-color: #4a5568;
+    }
+    
+    .accessibility-header h3 {
+        color: white;
+    }
+    
+    .accessibility-section h4 {
+        color: white;
+    }
+    
+    .control-group button {
+        background: #4a5568;
+        color: white;
+        border-color: #718096;
+    }
+    
+    .control-group button:hover {
+        background: #718096;
+        border-color: #63b3ed;
+        color: #63b3ed;
+    }
+}
