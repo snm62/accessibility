@@ -1,7 +1,7 @@
 /* Widget Button */
 #accessibility-widget {
     position: fixed;
-    z-index: 10000;
+    z-index: 10000; 
     bottom: 20px;
     right: 20px;
 }
